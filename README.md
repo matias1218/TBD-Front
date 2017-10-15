@@ -1,16 +1,31 @@
-# Plantilla para Vue
+# TBD Front-End
 ## Taller de Base de Datos
 
-Incluye:
-* ejemplo básico de [Webpack](https://webpack.github.io/)
-* plantilla para [Vue.js](https://vuejs.org/)
+### Prerequisitos
 
-### Requisitos previos
- [Node js](https://nodejs.org/es/download/)
+- Node.js
+- D3.js
+- Npm 
+
+* Para poder compilar el proyecto es necesario tener instalada la libreria de D3
+Se instala con el comando:
+
+```
+$ npm install --save d3
+```
 
 ### Instalación plantilla Vue
 
-* ir a carpeta `plantilla vue`
-* instalar dependencias de node `npm install`
-* ejecutar `npm run dev`
-* generar distribuible `npm run build`
+* Ejecutar dentro de carpeta  `/plantilla-vue`:
+
+```
+$ npm install
+```
+### Ejecución
+
+* Ejecutar dentro de carpeta  `/plantilla-vue`:
+
+```
+$ npm run dev
+```
+
