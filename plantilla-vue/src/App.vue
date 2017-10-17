@@ -15,6 +15,7 @@
           <div id="demoAcc" class="w3-hide w3-white w3-card-2">
             <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleBarChart">Barras</a>
             <a href="#/pieChart" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Torta</a>
+            <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePiesChart">Listado en Torta</a>
           </div>
 <!--
           <div class="w3-dropdown-click">
@@ -36,7 +37,7 @@
   
     <div id="main">
 
-    <div class="w3-bar w3-teal w3-border w3-large">
+    <div class="w3-bar w3-theme-d4 w3-border w3-large">
 
       <a id="openNav" class="w3-bar-item w3-button w3-white" data-toggle="tooltip" title="Menu" v-on:click="open"><i class="fa fa-th-list"></i></a>
       <a href="#/index" class="w3-bar-item w3-button" data-toggle="tooltip" title="Inicio" v-on:click="changeTitleHome"><i class="fa fa-home"></i></a>
@@ -48,18 +49,24 @@
     </div>
 
     <main class="container">
-        <div class="w3-teal" id="grafico">
+        <div class="w3-theme-l2">
       
-          <div class="w3-container">
+          <div class="w3-container w3-center" >
             <h1>{{title}}</h1>
+            <h4>{{text}}</h4>
           </div>
       </div>
-      <router-view></router-view>
+      <div>
+        <br>
+         <router-view></router-view> 
+         <br> 
+      </div>
+     
     </main>
 
     </div>
-    <footer>
-
+    <footer class="w3-theme-d4">
+    <p>holas</p>
       
     </footer>
 </div>
@@ -70,31 +77,32 @@
 export default {
   data(){
     return{
-      title:''
+      title:'',
+      text:''
     }
   },
 
   methods: {
     open: function (event) {
-      document.getElementById("main").style.marginLeft = "15%";
-      document.getElementById("mySidebar").style.width = "15%";
+      document.getElementById("main").style.marginLeft = "0%";
+      document.getElementById("mySidebar").style.width = "18%";
       document.getElementById("mySidebar").style.display = "block";
-      document.getElementById("openNav").style.display = 'none';
+      document.getElementById("openNav").style.display = "block";
     },
     close: function (event) {
       document.getElementById("main").style.marginLeft = "0%";
       document.getElementById("mySidebar").style.display = "none";
-      document.getElementById("openNav").style.display = "inline-block";
+      document.getElementById("openNav").style.display = "block";
     },
     show: function (event){
       var x = document.getElementById("demoAcc");
       if (x.className.indexOf("w3-show") == -1) {
           x.className += " w3-show";
-          x.previousElementSibling.className += " w3-green";
+          x.previousElementSibling.className += " w3-theme-d4";
       } else { 
           x.className = x.className.replace(" w3-show", "");
           x.previousElementSibling.className = 
-          x.previousElementSibling.className.replace(" w3-green", "");
+          x.previousElementSibling.className.replace(" w3-theme-d4", "");
       }
     },
 
@@ -102,26 +110,32 @@ export default {
         var x = document.getElementById("demoDrop");
         if (x.className.indexOf("w3-show") == -1) {
             x.className += " w3-show";
-            x.previousElementSibling.className += " w3-green";
+            x.previousElementSibling.className += " w3-theme-d4";
         } else { 
             x.className = x.className.replace(" w3-show", "");
             x.previousElementSibling.className = 
-            x.previousElementSibling.className.replace(" w3-green", "");
+            x.previousElementSibling.className.replace(" w3-theme-d4", "");
         }
     },
     changeTitleBarChart: function(){
            this.title = 'Estadisticas 1';
     },
+
     changeTitlePieChart: function(){
            this.title = 'Estadisticas 2';
     },
+    changeTitlePiesChart: function(){
+           this.title = 'Estadisticas 3';
+    },
     changeTitleHome: function(){
-           this.title = 'Pagina Principal';
+           this.title = 'Tweeds';
+           //this.text = 'Información ciudadana sobre la Cannabis Sativa';
     },
   },
   mounted:function(){
     if(this.$route.path =='/' || this.$route.path =='/index'){
-      this.title = 'Pagina Principal';
+      this.title = 'Tweeds';
+      //this.text = 'Información ciudadana sobre la Cannabis Sativa';
     }
   }
 }

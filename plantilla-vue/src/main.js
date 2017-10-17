@@ -5,6 +5,8 @@ import Actors from './Actors.vue';
 import formulario from './formulario.vue';
 import barChart from './grafico.vue';
 import pieChart from './Piechart.vue';
+import pie from './pie.vue';
+import estadisticas1 from './Estadisticas1.vue';
 import VueResource from 'vue-resource';
 require("./style.scss");
 
@@ -16,7 +18,9 @@ const routes = [
   { path:'/actors', component: Actors},
   { path:'/form', component: formulario},
   { path:'/barChart', component: barChart},
-  { path:'/pieChart', component: pieChart}
+  { path:'/pieChart', component: pieChart},
+  { path:'/pie', component: pie},
+  { path:'/estadisticas1', component: estadisticas1}
 ]
 
 // Create the router instance and pass the `routes` option
