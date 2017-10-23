@@ -20,6 +20,7 @@ export default{
       title:'Index'
     }
   },
+  
   components:{
     BarGraph,
     PieGraph

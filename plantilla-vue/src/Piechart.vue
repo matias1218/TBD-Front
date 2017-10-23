@@ -4,14 +4,15 @@
 <div class="w3-container" id="pieChart">
 	
 	<div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
-	    <p>Indices de aprobación.</p>
-	    <p>Frente a la gran concentración de población en la región Metropolitana, existe una mayor concentración de popularidad en el consumo de Marihuana</p>
+	    <h3>Cantidad de Tweets</h3>
+	    <p>El siguiente gráfico muestra las cantidades de tweets emitidos los cuales han sido clasificados por categoria, donde se destacan 3 principales y las cuales son nuestro objeto de estudio: Medicina, Recreacional  y Legalización.</p>
+
 	    
 
   	</div>
 
   	 <div class="w3-container w3-light-gray w3-cell m1">
-	    <p>Porcentaje de aprobación/desaprobación en la region Metropolitana</p>
+	    <p>Clasificacion de Tweets recopilados segun categoría</p>
 
 	    <div class="w3-container w3-gray w3-cell m4">
 		    <div >
@@ -28,15 +29,11 @@ import * as d3 from 'd3';
 export default{
   data: function(){
     return {
-  
-      data : [
-      		{
-      			label:'Yes',population:95
-      		},
-      		{
-      			label:'No',population:5
-      		}	
-      ],
+    
+      data2 : []
+
+
+      //{"tweetsTopicId":1,"topicId":1,"date":1508710487000,"value":10}
 
 
 
@@ -44,6 +41,7 @@ export default{
   },
   methods:{
     loadGraph:function(data){
+
 
     	
 		var width = 500;
@@ -53,7 +51,7 @@ export default{
         var legendRectSize = 18;                                  // NEW
         var legendSpacing = 4;                                    // NEW
 
-        var color = d3.scaleOrdinal(["#98abc5", "#8a89a6"]);
+        var color = d3.scaleOrdinal(["#98abc5", "#8a89a6", "#cfbde2"]);
 
         var body = d3.select("#pieChart");
         var svg = body.select('#chart')
@@ -69,7 +67,7 @@ export default{
           .outerRadius(radius - 18);
 
         var pie = d3.pie()
-          .value(function(d) { return d.population; })
+          .value(function(d) { return d.value; })
           .sort(null);
 
         var path = svg.selectAll('path')
@@ -78,7 +76,7 @@ export default{
           .append('path')
           .attr('d', arc)
           .attr('fill', function(d, i) { 
-            return color(d.data.label);
+            return color(d.data.topicName);
           });
 
         var legend = svg.selectAll('.legend')                     // NEW
@@ -89,7 +87,7 @@ export default{
           .attr('transform', function(d, i) {                     // NEW
             var height = legendRectSize + legendSpacing;          // NEW
             var offset =  height * color.domain().length / 2;     // NEW
-            var horz = -12.5 * legendRectSize;                    // mueve leyenda en horizontal
+            var horz = -14 * legendRectSize;                    // mueve leyenda en horizontal
             var vert = i * height - offset;                       // mueve leyenda en vertical
             return 'translate(' + horz + ',' + vert + ')';        // NEW
           });                                                     // NEW
@@ -110,7 +108,14 @@ export default{
   },
   mounted:function(){
    
-     this.loadGraph(this.data);
+    this.$http.get('http://localhost:8081/tbd-tweeds-backend/tweets_topic')
+    .then(response=>{
+      this.data2 = response.body;
+      this.loadGraph(this.data2);
+    }, response=>{
+      console.log("error de conexion");
+    })
+     
      //this.cosa(this.data);
      //this.cosa2(this.data3);
      

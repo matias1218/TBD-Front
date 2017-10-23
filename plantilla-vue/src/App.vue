@@ -13,9 +13,13 @@
           Ver Estadisticas <i class="fa fa-caret-down"></i>
           </button>
           <div id="demoAcc" class="w3-hide w3-white w3-card-2">
+<!--
             <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleBarChart">Barras</a>
-            <a href="#/pieChart" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Torta</a>
+    -->        
+            <a href="#/pieChart" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Tweets por tópico</a>
+            <!--
             <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePiesChart">Listado en Torta</a>
+          -->
           </div>
 <!--
           <div class="w3-dropdown-click">
@@ -66,7 +70,7 @@
 
     </div>
     <footer class="w3-theme-d4">
-    <p>holas</p>
+    <p>Tweeds</p>
       
     </footer>
 </div>
@@ -122,7 +126,7 @@ export default {
     },
 
     changeTitlePieChart: function(){
-           this.title = 'Estadisticas 2';
+           this.title = 'Tweets por categoria';
     },
     changeTitlePiesChart: function(){
            this.title = 'Estadisticas 3';
