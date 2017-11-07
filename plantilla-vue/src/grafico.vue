@@ -1,24 +1,33 @@
 
 <template>	
- 	
-<div class="w3-center w3-cell-row" >
+
+<div class="w3-container">
+	<div class="w3-panel w3-theme-l1 w3-card-2 w3-center">
+        <p>Estadisticas de Aprobación y desaprobación de la Marihuana.</p>
+      </div>
+
+      <div class="w3-center w3-cell-row" id="wea">
+
+	 
 	
 	<div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
-	    <p>Indices de aprobación.</p>
-	    <p>El siguiente gráfico corresponde a la distribucion de los sectores<br>
-	    donde existe mayor aprobación del consumo de marihuana en la ciudad de <br>
-		Santiago de Chile.</p>
+	    <p>Indices de aprobación y desaprobación.</p>
+	    <p>El siguiente gráfico corresponde a la distribución de la opinión general de la población referente a los 2 tópicos estudiados: Legalización y Medicinal.</p>
 	    
 
   	</div>
 
   	 <div class="w3-container w3-light-gray w3-cell m1 w3-cell-top">
-	    <p>Gráfico aprobación en las principales comunas de Santiago.</p>
-	    <svg width="960" height="500"></svg>
+	    <p>Gráfico de aprobación-desaprobación de la población Chilena.</p>
+	    <svg  width="960" height="500"></svg>
 	  </div>
 	
 
 </div>
+
+</div>
+ 	
+
 
 </template>
 <script>
@@ -65,6 +74,10 @@ export default{
   			{date:'9-Mar-12', close: 5.59},			
   			{date:'2-Mar-12', close: 44.06}
 
+      ],
+      dataset : [
+      {"id":1,"approval":444,"disapproval":274,"create":1509932247000,"topic":{"id":1,"name":"Legalización"}},
+      {"id":2,"approval":276,"disapproval":45,"create":1509932252000,"topic":{"id":2,"name":"Medicinal"}}
       ]
     }
   },
@@ -76,17 +89,27 @@ export default{
 		    width = +svg.attr("width") - margin.left - margin.right,
 		    height = +svg.attr("height") - margin.top - margin.bottom;
 
+
+		var tooltip = d3.select("body")
+			.append("div")
+			.attr("class", "toolTip");
+
 		var x = d3.scaleBand().rangeRound([0, width]).padding(0.2),
 		    y = d3.scaleLinear().rangeRound([height, 0]);
 
-		var g = svg.append("g")
-		    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		var coloursD = d3.scaleOrdinal().range(["#cb0000"]);
+		var coloursA = d3.scaleOrdinal().range(["#579317"]);
 
+		var g = svg.append("g")
+		    .attr("transform", "translate(" + 30 + "," + margin.top + ")");
+
+		var f = svg.append("g")
+		    .attr("transform", "translate(" + 210 + "," + margin.top + ")");
 		
 
-		  x.domain(data.map(function(d) { return d.letter; }));
-		  //y.domain([0, d3.max(data, function(d) { return d.frequency; })]);
-		  y.domain([0, 1]); // eje y en rangos de 0% hasta el 100%
+		  x.domain(data.map(function(d) { return d.topic.name; }));
+		  y.domain([0, 100]);
+		  //y.domain([0, 1]); // eje y en rangos de 0% hasta el 100%
 
 		  g.append("g")
 		      .attr("class", "axis axis--x")
@@ -95,22 +118,53 @@ export default{
 
 		  g.append("g")
 		      .attr("class", "axis axis--y")
-		      .call(d3.axisLeft(y).ticks(20, "%")) // ticks indica la cantidad de indices del eje y
+		      .call(d3.axisLeft(y).ticks(20).tickSizeInner([-width])) // ticks indica la cantidad de indices del eje y
 		    .append("text")
 		      .attr("transform", "rotate(-90)")
 		      .attr("y", 6)
 		      .attr("dy", "0.71em")
 		      .attr("text-anchor", "end")
-		      .text("Frequency");
+		      .attr("fill", "#5D6971")
+		      .text("Porcentaje de 0 a 100%");
 
 		  g.selectAll(".bar")
 		    .data(data)
 		    .enter().append("rect")
 		      .attr("class", "bar")
-		      .attr("x", function(d) { return x(d.letter); })
-		      .attr("y", function(d) { return y(d.frequency); })
-		      .attr("width", x.bandwidth())
-		      .attr("height", function(d) { return height - y(d.frequency); });
+		      .attr("x", function(d) { return x(d.topic.name); })
+		      .attr("y", function(d) { return y((d.approval*100)/(d.approval+d.disapproval)); })
+		      .attr("width", 100)
+		      .attr("height", function(d) { return height - y((d.approval*100)/(d.approval+d.disapproval)); })
+		      .attr("fill", function(d) { return coloursA(d.approval); })
+		      .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 70 + "px")
+              .style("display", "inline-block")
+              .html("Aprobación "+"<br><br>"+"Categoria: "+(d.topic.name)+ "<br>"+ "Porcentaje de tweets: "+ ((d.approval*100)/(d.approval+d.disapproval))+" %");
+        })
+    		.on("mouseout", function(d){ tooltip.style("display", "none");});
+
+
+		  f.selectAll(".bar2")
+		    .data(data)
+		    .enter().append("rect")
+		      .attr("class", "bar")
+		      .attr("x", function(d) { return x(d.topic.name); })
+		      .attr("y", function(d) { return y((d.disapproval*100)/(d.approval+d.disapproval)); })
+		      .attr("width", 100)
+		      .attr("height", function(d) { return height - y((d.disapproval*100)/(d.approval+d.disapproval)); })
+		      .attr("fill", function(d) { return coloursD(d.disapproval); })
+		      .on("mousemove", function(d){
+            tooltip
+              .style("left", d3.event.pageX - 50 + "px")
+              .style("top", d3.event.pageY - 70 + "px")
+              .style("display", "inline-block")
+              .html("Desaprobación "+"<br><br>"+"Categoria: "+(d.topic.name)+ "<br>"+ "Porcentaje de tweets: "+ ((d.disapproval*100)/(d.approval+d.disapproval))+" %");
+        })
+    		.on("mouseout", function(d){ tooltip.style("display", "none");});
+
+
 		
     },
     cosa:function(data){
@@ -230,7 +284,7 @@ export default{
   },
   mounted:function(){
    
-     this.loadGraph(this.data2);
+     this.loadGraph(this.dataset);
      //this.cosa(this.data);
      //this.cosa2(this.data3);
      
@@ -238,6 +292,31 @@ export default{
 }
 </script>
 <style> 
+	.axis {
+		font: 13px sans-serif;
+
+	}
+	.axis path,
+	.axis line {
+	  fill: none;
+	  stroke: #D4D8DA;
+	  stroke-width: 1px;
+	  shape-rendering: crispEdges;
+	}
+	.toolTip {
+	    position: absolute;
+	    display: none;
+	    width: auto;
+	    height: auto;
+	    background: none repeat scroll 0 0 white;
+	    border: 0 none;
+	    border-radius: 8px 8px 8px 8px;
+	    box-shadow: -3px 3px 15px #888888;
+	    color: black;
+	    font: 12px sans-serif;
+	    padding: 5px;
+	    text-align: center;
+	}
 	.chart div {
 	  font: 10px sans-serif;
 	  background-color: steelblue;
@@ -258,17 +337,7 @@ export default{
 	}
 
 
-	.bar {
-	  fill: steelblue;
-	}
-
-	.bar:hover {
-	  fill: brown;
-	}
-
-	.axis--x path {
-	  display: block;
-	}
+	
 
 	.line {
 	  fill: none;

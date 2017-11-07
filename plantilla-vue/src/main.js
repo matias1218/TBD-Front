@@ -7,6 +7,10 @@ import barChart from './grafico.vue';
 import pieChart from './Piechart.vue';
 import pie from './pie.vue';
 import estadisticas1 from './Estadisticas1.vue';
+import grafo from './grafo.vue';
+import pieApr from './pieChart/legalizacionPieApproval.vue';
+import line from './line.vue';
+import pieDis from './pieChart/legalizacionPieDisapproval.vue';
 import VueResource from 'vue-resource';
 require("./style.scss");
 
@@ -20,7 +24,12 @@ const routes = [
   { path:'/barChart', component: barChart},
   { path:'/pieChart', component: pieChart},
   { path:'/pie', component: pie},
-  { path:'/estadisticas1', component: estadisticas1}
+  { path:'/estadisticas1', component: estadisticas1},
+  { path:'/grafo', component: grafo},
+  { path:'/pieApr', component: pieApr},
+  { path:'/pieDis', component: pieDis},
+  { path:'/line', component: line}
+
 ]
 
 // Create the router instance and pass the `routes` option

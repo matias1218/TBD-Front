@@ -1,0 +1,23 @@
+{
+	"data":[
+			{"date":"30-May-12", "close": 23.33},           
+            {"date":"23-May-12", "close": 23.12},       
+            {"date":"19-May-12", "close": 3.13},            
+            {"date":"10-May-12", "close": 23.15},           
+            {"date":"1-May-12", "close": 4.78},         
+            {"date":"29-Apr-12", "close": 55.13},           
+            {"date":"20-Apr-12", "close": 66.56},           
+            {"date":"10-Apr-12", "close": 76.52},           
+            {"date":"2-Apr-12", "close": 43.98},            
+            {"date":"30-Mar-12", "close": 33.32},           
+            {"date":"26-Mar-12", "close": 2.51},            
+            {"date":"22-Mar-12", "close": 33.35},           
+            {"date":"20-Mar-12", "close": 23.77},           
+            {"date":"16-Mar-12", "close": 45.52},           
+            {"date":"12-Mar-12", "close": 5.50},            
+            {"date":"9-Mar-12", "close": 5.59},         
+            {"date":"2-Mar-12", "close": 44.06}
+
+      ]
+
+}

@@ -1,9 +1,10 @@
 <template>
 
 <section>
- 
+    <lie-graph ></lie-graph>
     <bar-graph ></bar-graph>
     <pie-graph ></pie-graph>
+    
 
 
 </section>
@@ -11,8 +12,9 @@
 
 </template>
 <script>
-import BarGraph from './Piechart.vue';
-import PieGraph from './pie.vue';
+import BarGraph from './pieChart/legalizacionPieApproval.vue';
+import PieGraph from './pieChart/legalizacionPieDisapproval.vue';
+import lieGraph from './grafico.vue';
 export default{
 
   data(){
@@ -23,7 +25,8 @@ export default{
   
   components:{
     BarGraph,
-    PieGraph
+    PieGraph,
+    lieGraph
   },
   mounted:function(){
     console.log('Index.vue')

@@ -1,0 +1,122 @@
+{
+	"links" :[
+		{
+			"source": 3,
+			"target": 0
+		},
+		{
+			"source": 4,
+			"target": 1
+		},
+		{
+			"source": 5,
+			"target": 0
+		},
+		{
+			"source": 6,
+			"target": 1
+		},
+		{
+			"source": 7,
+			"target": 1
+		},
+		{
+			"source": 8,
+			"target": 0
+		},
+		{
+			"source": 9,
+			"target": 1
+		},
+		{
+			"source": 10,
+			"target": 1
+		},
+		{
+			"source": 10,
+			"target": 0
+		},
+		{
+			"source": 10,
+			"target": 2
+		},
+		{
+			"source": 11,
+			"target": 2
+		}
+	],
+	"nodes" :[
+		{
+			"id":0,
+			"userName": "Medicinal",
+			"tweet":"Categoría: Medicinal",
+			"peso": 9
+		},
+		{
+			"id":1,
+			"userName": "Legalizacion",
+			"tweet":"Categoría: Legalización",
+			"peso": 9
+		},
+		{
+			"id":2,
+			"userName": "Recreativo",
+			"tweet":"Categoría: Recreativa",
+			"peso": 9
+		},
+		{
+			"id":3,
+			"userName": "Juanito",
+			"tweet":"Apruebo la marihuana medicinal",
+			"peso": 4
+		},
+		{
+			"id":4,
+			"userName": "Pedrito",
+			"tweet": "Prohiban la marihuana",
+			"peso": 4
+		},
+		{
+			"id":5,
+			"userName": "Esperanza",
+			"tweet": "Estudio de Harvard prueba que marihuana es benefica...",
+			"peso": 4
+		},
+		{
+			"id":6,
+			"userName": "Oscar",
+			"tweet": "La marihuana es pura droga",
+			"peso": 4
+		},
+		{
+			"id":7,
+			"userName": "Alondra",
+			"tweet": "Cambien la ley 20000",
+			"peso": 4
+		},
+		{
+			"id":8,
+			"userName": "Estefania",
+			"tweet": "La marihuana me ayudó a sanar",
+			"peso": 4
+		},
+		{
+			"id":9,
+			"userName": "Javiera",
+			"tweet": "Lo arrestaron por fumar marihuana",
+			"peso": 4
+		},
+		{
+			"id":10,
+			"userName": "Katiuska Molotov",
+			"tweet": "Apruebo la marihuana tanto medicinal como recreativa",
+			"peso": 4
+		},
+		{
+			"id":11,
+			"userName": "Esteban",
+			"tweet": "Debería poder fumarme un caño tranquilo, legalicenla",
+			"peso": 5
+		}
+	]
+}

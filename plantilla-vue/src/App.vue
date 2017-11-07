@@ -1,5 +1,6 @@
 <template>
   <div>
+
     
     <div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="display:none" id="mySidebar">
       <div class="w3-bar w3-dark-grey">
@@ -16,7 +17,8 @@
 <!--
             <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleBarChart">Barras</a>
     -->        
-            <a href="#/pieChart" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Tweets por tópico</a>
+            <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Aprobación-Desaprobación</a>
+            <a href="#/grafo" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Redes de información</a>
             <!--
             <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePiesChart">Listado en Torta</a>
           -->
@@ -41,10 +43,10 @@
   
     <div id="main">
 
-    <div class="w3-bar w3-theme-d4 w3-border w3-large">
+    <div class="w3-bar w3-theme-d5 w3-border w3-xlarge w3-card-4">
 
-      <a id="openNav" class="w3-bar-item w3-button w3-white" data-toggle="tooltip" title="Menu" v-on:click="open"><i class="fa fa-th-list"></i></a>
-      <a href="#/index" class="w3-bar-item w3-button" data-toggle="tooltip" title="Inicio" v-on:click="changeTitleHome"><i class="fa fa-home"></i></a>
+      <a id="openNav" class="w3-bar-item w3-button w3-white " data-toggle="tooltip" title="Menu" v-on:click="open"><i class="fa fa-th-list"></i></a>
+      <a href="#/index" class="w3-bar-item w3-button " data-toggle="tooltip" title="Inicio" v-on:click="changeTitleHome"><i class="fa fa-home"></i></a>
       <a href="#" class="w3-bar-item w3-button" data-toggle="tooltip" title="Buscar"><i class="fa fa-search"></i></a>
       <a href="#" class="w3-bar-item w3-button" data-toggle="tooltip" title="Contactanos"><i class="fa fa-envelope"></i></a>
       <a href="#" class="w3-bar-item w3-button" data-toggle="tooltip" title="Siguenos en twitter"><i class="fa fa-twitter"></i></a>
@@ -52,14 +54,9 @@
 
     </div>
 
-    <main class="container">
-        <div class="w3-theme-l2">
+    
+    <main class="w3-container">
       
-          <div class="w3-container w3-center" >
-            <h1>{{title}}</h1>
-            <h4>{{text}}</h4>
-          </div>
-      </div>
       <div>
         <br>
          <router-view></router-view> 
@@ -144,3 +141,109 @@ export default {
   }
 }
 </script>
+<style>
+  td, th {
+    vertical-align: middle !important;
+    }
+.left, .right {
+        float:left;
+        height:100vh;
+    }
+    
+.left {
+        background: #337ab7;
+        display: inline-block;
+        white-space: nowrap;
+        width: 50px;
+        transition: width 1s ;
+    }
+
+.right {
+        background: #fff;
+        width: 350px;
+        transition: width 1s;
+        border-style:solid;
+        border-color:#ccc;
+        border-width:1px;
+    }    
+
+.left:hover {
+        width: 250px;
+    }    
+    
+.item:hover {
+        background-color:#ccc;
+        }
+        
+.left .glyphicon {
+        margin:15px;
+        width:20px;
+        color:#fff;
+    }
+    
+.right .glyphicon {
+        color:#a9a9a9;
+    }
+span.glyphicon.glyphicon-refresh{
+    font-size:17px;
+    vertical-align: middle !important;
+    }
+    
+.item {
+        height:50px;
+        overflow:hidden;
+        color:#fff;
+    }
+.title {
+        background-color:#eee;
+        border-style:solid;
+        border-color:#ccc;
+        border-width:1px;
+        box-sizing: border-box;
+    }
+.search:hover {
+        border-color:#4aa9fb;
+        border-width:1px;
+    }
+.search {
+    padding:3px 8px 3px !important;
+    }
+input[type=search] {
+    padding: 10px 0px 10px;
+  border: 0px solid #fff;
+  background: #eee;
+  -webkit-appearance: none;
+    width:90%;
+    float:none;
+}
+input[type=search]:focus {
+    outline:none;
+    }
+.type{
+    height: 47px;;
+    }
+.date{
+    background-color:#f7f7f7
+    }
+.docdate {
+    vertical-align:bottom !important;
+    }
+.distr {
+    margin: 0 0 5px;
+    font-size: 12px;
+    }
+.ndoc {
+    margin: 0 0 5px;
+    }
+.storage {
+    margin: 0;
+    color: #aaa !important;
+    font-size: 12px;
+    }
+        
+    
+    
+   
+
+    
+</style>
