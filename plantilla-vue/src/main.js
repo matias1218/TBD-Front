@@ -11,6 +11,7 @@ import grafo from './grafo.vue';
 import pieApr from './pieChart/legalizacionPieApproval.vue';
 import line from './line.vue';
 import pieDis from './pieChart/legalizacionPieDisapproval.vue';
+import tweets from './pieChart/tweets.vue';
 import VueResource from 'vue-resource';
 require("./style.scss");
 
@@ -27,8 +28,10 @@ const routes = [
   { path:'/estadisticas1', component: estadisticas1},
   { path:'/grafo', component: grafo},
   { path:'/pieApr', component: pieApr},
+  { path:'/line', component: line},
   { path:'/pieDis', component: pieDis},
-  { path:'/line', component: line}
+  { path:'/tweets', component: tweets},
+
 
 ]
 

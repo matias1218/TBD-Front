@@ -75,10 +75,7 @@ export default{
   			{date:'2-Mar-12', close: 44.06}
 
       ],
-      dataset : [
-      {"id":1,"approval":444,"disapproval":274,"create":1509932247000,"topic":{"id":1,"name":"Legalización"}},
-      {"id":2,"approval":276,"disapproval":45,"create":1509932252000,"topic":{"id":2,"name":"Medicinal"}}
-      ]
+      dataset : []
     }
   },
   methods:{
@@ -284,9 +281,16 @@ export default{
   },
   mounted:function(){
    
-     this.loadGraph(this.dataset);
-     //this.cosa(this.data);
-     //this.cosa2(this.data3);
+     this.$http.get('http://localhost:8081/tbd-tweeds-backend/approvals')
+	    .then(response=>{
+	      this.dataset = response.body;
+	      console.log("wea bacan");
+	      console.log(this.dataset);
+	      this.loadGraph(this.dataset);
+	    }, response=>{
+	      console.log("error de conexion");
+	    })
+
      
   }
 }

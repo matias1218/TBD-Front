@@ -30,26 +30,70 @@
 		},
 		{
 			"source": 10,
-			"target": 1
-		},
-		{
-			"source": 10,
 			"target": 0
 		},
 		{
-			"source": 10,
-			"target": 2
+			"source": 11,
+			"target": 0
+		},
+		{
+			"source": 12,
+			"target": 0
+		},
+		{
+			"source": 13,
+			"target": 1
+		},
+		{
+			"source": 14,
+			"target": 1
+		},
+		{
+			"source": 15,
+			"target": 1
+		},
+		{
+			"source": 16,
+			"target": 0
+		},
+		{
+			"source": 17,
+			"target": 1
+		},
+		{
+			"source": 18,
+			"target": 0
+		},
+		{
+			"source": 18,
+			"target": 1
+		},
+		{
+			"source": 19,
+			"target": 1
+		},
+		{
+			"source": 20,
+			"target": 0
+		},
+		{
+			"source": 2,
+			"target": 0
+		},
+		{
+			"source": 2,
+			"target": 1
 		},
 		{
 			"source": 11,
-			"target": 2
+			"target": 1
 		}
 	],
 	"nodes" :[
 		{
 			"id":0,
 			"userName": "Medicinal",
-			"tweet":"Categoría: Medicinal",
+			"tweet":"Categoría Medicinal",
 			"peso": 9
 		},
 		{
@@ -60,63 +104,118 @@
 		},
 		{
 			"id":2,
-			"userName": "Recreativo",
-			"tweet":"Categoría: Recreativa",
-			"peso": 9
+			"userName": "Juan Labarca Orellana",
+			"tweet":"Debiesen legislar a favor del consumo de marihuana, sus efectos medicinales están comprobados @GobiernoDeChile",
+			"peso": 4
 		},
 		{
 			"id":3,
-			"userName": "Juanito",
-			"tweet":"Apruebo la marihuana medicinal",
+			"userName": "Ernesto Fuenzalida",
+			"tweet":"Apruebo la marihuana medicinal, pero no en su totalidad",
 			"peso": 4
 		},
 		{
 			"id":4,
-			"userName": "Pedrito",
-			"tweet": "Prohiban la marihuana",
+			"userName": "Diddy Estefania",
+			"tweet": "Prohiban la marihuana de una buena vez",
 			"peso": 4
 		},
 		{
 			"id":5,
-			"userName": "Esperanza",
-			"tweet": "Estudio de Harvard prueba que marihuana es benefica...",
+			"userName": "Esperanza Alvear",
+			"tweet": "Estudio de Harvard prueba que marihuana es benefica, hasta cuando esperan?...",
 			"peso": 4
 		},
 		{
 			"id":6,
-			"userName": "Oscar",
-			"tweet": "La marihuana es pura droga",
+			"userName": "OscarD2",
+			"tweet": "La marihuana es pura droga, les destruirá el cerebro",
 			"peso": 4
 		},
 		{
 			"id":7,
-			"userName": "Alondra",
-			"tweet": "Cambien la ley 20000",
+			"userName": "Alondra Artuzar",
+			"tweet": "Cambien la ley 20000, libertad para fumar #Marihuana",
 			"peso": 4
 		},
 		{
 			"id":8,
-			"userName": "Estefania",
-			"tweet": "La marihuana me ayudó a sanar",
+			"userName": "Estefania Argomedo",
+			"tweet": "La marihuana me ayudó a sanar mis dolores en la pierna",
 			"peso": 4
 		},
 		{
 			"id":9,
-			"userName": "Javiera",
-			"tweet": "Lo arrestaron por fumar marihuana",
+			"userName": "Javiera Lobato",
+			"tweet": "Lo arrestaron por fumar marihuana en la calle, basta de abusos",
 			"peso": 4
 		},
 		{
 			"id":10,
-			"userName": "Katiuska Molotov",
-			"tweet": "Apruebo la marihuana tanto medicinal como recreativa",
+			"userName": "Karina Lobos",
+			"tweet": "Los estudios afirman que la marihuana es beneficiosa, paren su webeo",
 			"peso": 4
 		},
 		{
 			"id":11,
-			"userName": "Esteban",
-			"tweet": "Debería poder fumarme un caño tranquilo, legalicenla",
-			"peso": 5
+			"userName": "Iggy Soledad",
+			"tweet": "Estudio confirma que las personas que son menores de 21 años pueden tener problemas de desarrollo neuronal debido al consumo de marihuana",
+			"peso": 4
+		},
+		{
+			"id":12,
+			"userName": "Fundación Daya",
+			"tweet": "El próximo año esperamos abastecer a muchas más personas de nuestro cultivo de marihuana, para poder otorgarles una mejor calidad de vida",
+			"peso": 4
+		},
+		{
+			"id":13,
+			"userName": "Maria Isabel Libarona",
+			"tweet": "Ayer los narcos que viven cerca de mi casa, valearon a una persona, al parecer no le gustó la marihuana... arrestenlos a todos",
+			"peso": 4
+		},
+		{
+			"id":14,
+			"userName": "Duca2",
+			"tweet": "La gente que fuma marihuana anda puro robando, deberían arrestarlos, con Piñera, no más narcotrafico",
+			"peso": 4
+		},
+		{
+			"id":15,
+			"userName": "sinFronteras",
+			"tweet": "Penalizando el cultivo de marihuana están coartando la libertad de las personas",
+			"peso": 4
+		},
+		{
+			"id":16,
+			"userName": "AzucaryMiel",
+			"tweet": "Es tan rica la marihuana, legalicenla de una vez, no más ley 20000",
+			"peso": 4
+		},
+		{
+			"id":17,
+			"userName": "cultivoM",
+			"tweet": "Cultivamos y trabajamos por un mundo mejor, no más penalizaciones por cultivar marihuana",
+			"peso": 4
+		},
+		{
+			"id":18,
+			"userName": "Abataste",
+			"tweet": "No somos narcotraficantes, utilizamos la marihuana de forma medicinal, no nos enjuicien por intentar estar más saludables",
+			"peso": 4
+		},
+		{
+			"id":19,
+			"userName": "katy",
+			"tweet": "Deberían arrestar a todos los narcotraficantes de marihuana",
+			"peso": 4
+		},
+
+		{
+			"id":20,
+			"userName": "joseP",
+			"tweet": "Le di aceite de marihuana a mi abuela y le ha funcionado de maravilla",
+			"peso": 4
 		}
 	]
 }

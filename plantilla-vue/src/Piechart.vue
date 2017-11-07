@@ -200,39 +200,6 @@ export default{
           div.style("display", "none");
       });
 
-      var legend = svg.append("g")
-      .attr("class", "legend")
-          //.attr("x", w - 65)
-          //.attr("y", 50)
-      .attr("height", 100)
-      .attr("width", 100)
-      .attr('transform', 'translate(-20,50)');    
-        
-      
-      legend.selectAll('rect')
-        .data(dataset)
-        .enter()
-        .append("rect")
-      .attr("x", w - 65)
-        .attr("y", function(d, i){ return i *  20;})
-      .attr("width", 10)
-      .attr("height", 10)
-      .style("fill", function(d) { 
-          var color = color_hash[data.indexOf(d)][1];
-          return color;
-        })
-        
-      legend.selectAll('text')
-        .data(dataset)
-        .enter()
-        .append("text")
-      .attr("x", w - 52)
-        .attr("y", function(d, i){ return i *  20 + 9;})
-      .text(function(d) {
-          var text = color_hash[data.indexOf(d)][0];
-          return text;
-        });
-
       
           
           

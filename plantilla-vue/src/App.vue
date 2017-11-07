@@ -16,7 +16,7 @@
           <div id="demoAcc" class="w3-hide w3-white w3-card-2">
 <!--
             <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleBarChart">Barras</a>
-    -->        
+    -->     <a href="#/tweets" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Tweets por topico</a>
             <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Aprobación-Desaprobación</a>
             <a href="#/grafo" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Redes de información</a>
             <!--

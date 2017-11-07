@@ -11,6 +11,7 @@
 
 
 </template>
+<script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 import * as d3 from 'd3';
 export default{
@@ -85,7 +86,7 @@ export default{
 
   function draw(data, country) {
     
-    var data = data[country];
+    var data = data["data"];
     
     // format the data
     data.forEach(function(d) {
@@ -353,7 +354,7 @@ export default{
   },
   mounted:function(){
    
-     this.loadGraph(this.dataset);
+     this.loadGraph("medicalDates.json");
      //this.cosa(this.data);
      //this.cosa2(this.data3);
      

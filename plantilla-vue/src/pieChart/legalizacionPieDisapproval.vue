@@ -6,19 +6,19 @@
 
 <div class="w3-container" >
 
-    <div class="w3-panel w3-theme-l1 w3-card-2">
-        <p>Grafo de redes sociales para cada tópico según las diversas opiniones y posturas de la población estudiada.</p>
+    <div class="w3-center w3-panel w3-theme-l1 w3-card-2">
+        <p>Gráfico de desaprobación general.</p>
       </div> 
   
   <div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
-      <p>Indices de aprobación.</p>
-      <p>En cambio, en las regiones del pais, el consumo se ve notablemente disminuido por lo que su aprobación es menor</p>
+      <p>Indices de desaprobación.</p>
+      <p>El siguiente gráfico muestra la distribución del indice de desaprobación total omitida dentro de la población Chilena</p>
       
 
     </div>
 
      <div class="w3-container w3-light-gray w3-cell m1">
-      <p>Porcentaje de aprobación/desaprobación en otras regiones.</p>
+      <p>Cantidad de tweets de desaprobación por tópico.</p>
 
       <div class="w3-container w3-cell m4">
         <div id="wea">

@@ -7,22 +7,22 @@
 <div class="w3-container" >
 
     <div class="w3-center w3-panel w3-theme-l1 w3-card-2">
-        <p>Gráfico de aprobación general.</p>
+        <p>Gráfico de cantidad de tweets por topico.</p>
       </div> 
   
   <div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
-      <p>Indices de aprobación.</p>
-      <p>El siguiente gráfico muestra la distribución del indice de aprobación total omitida dentro de la población chilena</p>
+      <p>Cantidad de tweets.</p>
+      <p>En el siguiente gráfico se muestra la distribución de la cantidad de tweets por tópico</p>
       
 
     </div>
 
      <div class="w3-container w3-light-gray w3-cell m1">
-      <p>Cantidad de tweets de aprobación por tópico.</p>
+      <p>Cantidad de tweets omitidos por tópico dentro de la población Chilena.</p>
 
       <div class="w3-container w3-cell m4">
-        <div id="cosa" >
-          <div id="pie">
+        <div id="wea">
+          <div id="pies">
     
           </div>
       </div>
@@ -57,7 +57,9 @@ export default{
       
       var width = 800,
           height = 500,
-          radius = Math.min(width, height) / 2;
+          radius = Math.min(width, height) / 2,
+          legendRectSize = 18,                            // NEW
+          legendSpacing = 4;
 
       var color = d3.scale.ordinal()
           .range(["#98abc5", "#8a89a6", "#7b6888", "#6b486b", "#a05d56"]);
@@ -70,9 +72,9 @@ export default{
           .sort(null)
          .startAngle(1.1*Math.PI)
           .endAngle(3.1*Math.PI)
-          .value(function(d) { return d.approval ; });
+          .value(function(d) { return d.value ; });
 
-      var svg = d3.select("#pie")
+      var svg = d3.select("#pies")
           .append("svg")
           .attr("width", width)
           .attr("height", height)
@@ -85,7 +87,7 @@ export default{
             .attr("class", "arc");
 
         g.append("path")
-        .style("fill", function(d) { return color(d.data.approval); })
+        .style("fill", function(d) { return color(d.data.value); })
           .transition().delay(function(d,i) {
         return i * 500; }).duration(500)
         .attrTween('d', function(d) {
@@ -100,21 +102,23 @@ export default{
             .attr("dy", ".35em")
           .transition()
           .delay(1000)
-            .text(function(d) { return d.data.topic.name });
-
+            .text(function(d) { return d.data.topic.name});
             g.append("text")
             .attr("transform", function(d) { return "translate(" + arc.centroid(d) + ")"; })
             .attr("dy", "2.35em")
           .transition()
           .delay(1000)
-            .text(function(d) { return "Tweets Aprobación: "+d.data.approval});
+            .text(function(d) { return "Cantidad tweets: "+d.data.value});
+
+      
+
 
       
           
           
       //d3.select("body").transition().style("background-color", "#d3d3d3");
       function type(d) {
-        d.approval = +d.approval;
+        d.disapproval = +d.disapproval;
         return d;
       }
     }
@@ -122,12 +126,11 @@ export default{
   },
   mounted:function(){
    
-    this.$http.get('http://localhost:8081/tbd-tweeds-backend/approvals')
+    this.$http.get('http://localhost:8081/tbd-tweeds-backend/tweets')
     .then(response=>{
       this.data2 = response.body;
       console.log(response.body);
-      this.grafico2(this.dataset);
-      console.log("blavlablabl");
+      this.grafico2(this.data2);
     }, response=>{
       console.log("error de conexion");
     })//this.grafico2(this.dataset);
@@ -136,7 +139,7 @@ export default{
 }
 </script>
 <style> 
-#pie { 
+#pies { 
     background-color:#FFE6AAFF;
 }
 
@@ -149,7 +152,7 @@ export default{
 
 	  stroke: #fff;
 	}
-  .toolTip {
+  .toolTip1 {
     position: absolute;
     display: none;
     width: auto;
