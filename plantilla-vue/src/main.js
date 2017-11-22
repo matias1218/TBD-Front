@@ -12,6 +12,7 @@ import pieApr from './pieChart/legalizacionPieApproval.vue';
 import line from './line.vue';
 import pieDis from './pieChart/legalizacionPieDisapproval.vue';
 import tweets from './pieChart/tweets.vue';
+import map from './maps/map.vue';
 import VueResource from 'vue-resource';
 require("./style.scss");
 
@@ -31,7 +32,7 @@ const routes = [
   { path:'/line', component: line},
   { path:'/pieDis', component: pieDis},
   { path:'/tweets', component: tweets},
-
+  { path:'/map', component: map}
 
 ]
 
