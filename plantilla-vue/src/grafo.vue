@@ -15,81 +15,19 @@
 
 <script>
 export default{
-	data: function(){
-		return{
-
-			data: []
-
-
-
-		}
-	},
+	
 	methods:{
-		cargarGrafo: function(json){
-
-			var width = 960,
-		    height = 500
-
-		    var body = d3.select("#grafo");
-			var svg = body.select('#chart')
-				.append("svg")
-			    .attr("width", width)
-			    .attr("height", height);
-
-			var force = d3.layout.force()
-			    .gravity(0.05)
-			    .distance(250)
-			    .charge(-100)
-			    .size([width, height]);
-
-		  force
-		      .nodes(json.nodes)
-		      .links(json.links)
-		      .start();
-
-		  var link = svg.selectAll(".link")
-		      .data(json.links)
-		    .enter().append("line")
-		      .attr("class", "link")
-		      .style("stroke-width", function(d) { return Math.sqrt(d.weight*10); });
-
-		  var node = svg.selectAll(".node")
-		      .data(json.nodes)
-		    .enter().append("g")
-		      .attr("class", "node")
-		      .call(force.drag);
-
-		  var color = d3.scale.category20();
-
-		   node.append("circle")
-		      .attr("r", function(d) { return d.weight*7 })
-		      .style("fill",function(d,i){return color(i);});
-
-		  node.append("text")
-		      .attr("dx", 12)
-		      .attr("dy", ".35em")
-		      .text(function(d) { return d.userName });
-
-		  force.on("tick", function() {
-		    link.attr("x1", function(d) { return d.source.x; })
-		        .attr("y1", function(d) { return d.source.y; })
-		        .attr("x2", function(d) { return d.target.x; })
-		        .attr("y2", function(d) { return d.target.y; });
-
-		    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
-		  });
 		
-		},
 		grafo2: function(json){
 			var margin = {top: 50, right: 50, bottom: 50, left: 50}
           , width = window.innerWidth - margin.left - margin.right // Use the window's width 
-          , height = window.innerHeight - margin.top - margin.bottom; // Use the window's height
+          , height = 600; // Use the window's height
 
 
 
 
           
-		  var svg = d3.select("#grafo")
+		  var svg = d3.select("#chart")
 		  	  .append("svg")
 		      .attr("width", width)
 		      .attr("height", height)
@@ -103,10 +41,9 @@ export default{
 
 
 		 
-		  var div = d3.select("#grafo")
-		    .append("div") 
-		    .attr("class", "tooltip")       
-		    .style("opacity", 0);
+		  var div = d3.select("#chart").append("div") 
+				    .attr("class", "tool")       
+				    .style("opacity", 0)
 
 
 
@@ -148,15 +85,14 @@ export default{
 		        })
 		        .on("mouseover",function(d){
 		          d3.select(this).transition()
-		          .attr("r",function(d) { return d.peso*6 })
-		          ;
+		          .attr("r",function(d) { return d.peso*6 });
 
 		          div.transition()    
 		                .duration(200)    
 		                .style("opacity", .95);    
 		            div .html(d.userName+':<br/>"'+d.tweet+'"')  
-		                .style("left", (d3.event.pageX) + "px")   
-		                .style("top", (d3.event.pageY) + "px"); 
+                .style("left", (d3.event.pageX) + "px")   
+                .style("top", (d3.event.pageY) + "px"); 
 
 
 		        })
@@ -208,8 +144,6 @@ export default{
 		this.$http.get('http://localhost:3000/db')
 	    .then(response=>{
 	      this.data = response.body;
-	      console.log("wea bacan");
-	      console.log(this.data);
 	      this.grafo2(this.data);
 	    }, response=>{
 	      console.log("error de conexion");
@@ -249,18 +183,15 @@ export default{
   stroke-width:30;
 }
 
-.tooltip {
-    position: absolute;
-    display: none;
-    width: auto;
-    height: auto;
-    background: none repeat scroll 0 0 white;
-    border: 0 none;
-    border-radius: 8px 8px 8px 8px;
-    box-shadow: -3px 3px 15px #888888;
-    color: black;
-    font: 12px sans-serif;
-    padding: 5px;
-    text-align: center;
+div.tool { 
+    position: absolute;     
+    text-align: center;     
+            
+    padding: 2px;       
+    font: 14px sans-serif;    
+    background: #00AA00FF; 
+    border: 0px;    
+    border-radius: 8px;     
+    pointer-events: none;     
 }
 </style>

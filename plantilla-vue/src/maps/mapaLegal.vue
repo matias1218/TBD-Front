@@ -4,7 +4,9 @@
 	<div class="w3-center w3-panel w3-theme-l1 w3-card-2">
         <p>Mapas de distribución de opiniones</p>
       </div>
+
 	<div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
+		
 	  <br><br><br><br><br><br><br><br><br><br><br>
       <p>Porcentaje regional.</p>
       <p>El siguiente mapa muestra la distribución porcentual por cada región de chile, acerca de la aprobación que posee la categoría: Legal</p>
@@ -322,10 +324,8 @@ export default{
 
 		legend.addTo(map);
 
-    }
-    
-  },
-  mounted:function(){
+    },
+    greet: function () {
 
   		this.$http.get('http://localhost:8081/tbd-tweeds-backend/approvalTopicByRegions/1/topic')
 	    .then(response=>{
@@ -474,13 +474,75 @@ export default{
 	      console.log("no se extrajo el approval");
 	    })
    
-  		
+  	}
+    
+  },
+  mounted:function(){
+
+
+  	
+  	this.greet();
+
 
   }
 }
 </script>
 <style> 
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
 
+.switch input {display:none;}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
 #map{
 	height: 100%;
 	width: 75%;

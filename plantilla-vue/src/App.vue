@@ -9,7 +9,7 @@
       </div>
       <div class="w3-bar-block">
        
- <!--       <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleEstadistics">Estadisticas</a> -->      <a href="#/index" class="w3-bar-item w3-button" v-on:click="changeTitleHome">Inicio</a>
+ <!--       <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleEstadistics">Estadisticas</a> -->   <a href="#/index" class="w3-bar-item w3-button" v-on:click="changeTitleHome">Inicio</a>
           <button class="w3-button w3-block w3-left-align" v-on:click="show">
           Ver Estadisticas <i class="fa fa-caret-down"></i>
           </button>
@@ -19,6 +19,19 @@
     -->     <a href="#/tweets" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Tweets por topico</a>
             <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Aprobación-Desaprobación</a>
             <a href="#/grafo" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Redes de información</a>
+            <!--
+            <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePiesChart">Listado en Torta</a>
+          -->
+          </div>
+          <button class="w3-button w3-block w3-left-align" v-on:click="show2">
+          Mapas regionales <i class="fa fa-caret-down"></i>
+          </button>
+          <div id="demoAccMap" class="w3-hide w3-white w3-card-2">
+<!--
+            <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleBarChart">Barras</a>
+    -->     <a href="#/mapLegal" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Legal</a>
+            <a href="#/mapMedic" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Medicinal</a>
+           
             <!--
             <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePiesChart">Listado en Torta</a>
           -->
@@ -97,6 +110,17 @@ export default {
     },
     show: function (event){
       var x = document.getElementById("demoAcc");
+      if (x.className.indexOf("w3-show") == -1) {
+          x.className += " w3-show";
+          x.previousElementSibling.className += " w3-theme-d4";
+      } else { 
+          x.className = x.className.replace(" w3-show", "");
+          x.previousElementSibling.className = 
+          x.previousElementSibling.className.replace(" w3-theme-d4", "");
+      }
+    },
+    show2: function (event){
+      var x = document.getElementById("demoAccMap");
       if (x.className.indexOf("w3-show") == -1) {
           x.className += " w3-show";
           x.previousElementSibling.className += " w3-theme-d4";
