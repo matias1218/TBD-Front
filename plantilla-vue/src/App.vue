@@ -10,6 +10,7 @@
       <div class="w3-bar-block">
        
  <!--       <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleEstadistics">Estadisticas</a> -->   <a href="#/index" class="w3-bar-item w3-button" v-on:click="changeTitleHome">Inicio</a>
+          <a href="#/tweetList" class="w3-bar-item w3-button" v-on:click="changeTitleHome">Tweets mas influyentes</a>
           <button class="w3-button w3-block w3-left-align" v-on:click="show">
           Ver Estadisticas <i class="fa fa-caret-down"></i>
           </button>
