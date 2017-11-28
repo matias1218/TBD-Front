@@ -141,7 +141,7 @@ export default{
 		}
 	},
 	mounted: function(){
-		this.$http.get('http://localhost:3004/db')
+		this.$http.get('http://localhost:8081/tbd-tweeds-backend/graph')
 	    .then(response=>{
 	      this.data = response.body;
 	      this.grafo2(this.data);
