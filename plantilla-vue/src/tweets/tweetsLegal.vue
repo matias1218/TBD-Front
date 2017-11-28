@@ -33,8 +33,12 @@ export default{
 	    return {
 	    	
 	    dataset:[
-			
-		]
+		["935306386141048832","234889198"],
+		["935306758029021185","234889198"],
+		["932749814672117761","910603842160660480"],
+		["932748938880446469","4786177654"],
+		["932749229793083392","1408972381"]
+	]
 	    	
 	 
 
@@ -47,12 +51,14 @@ export default{
 		}
 	},
 	mounted: function(){
+		/*
 		this.$http.get('http://localhost:8081/tbd-tweeds-backend/list_tweets/1')
 	    .then(response=>{
 	      this.dataset = response.body;
 	    }, response=>{
 	      console.log("error de conexion");
 	    })
+	    */
 
 	}
 }

@@ -33,9 +33,7 @@ export default{
 	data: function(){
 	    return {
 	    	
-	    dataset:[
-			
-		]
+	    dataset:[["933162338726961152","3766745960"],["932750161054523393","85594102"],["933162190928056320","3766745960"]]
 	    	
 	 
 
@@ -48,6 +46,7 @@ export default{
 		}
 	},
 	mounted: function(){
+		/*
 		this.$http.get('http://localhost:8081/tbd-tweeds-backend/list_tweets/2')
 	    .then(response=>{
 	      this.dataset = response.body;
@@ -55,6 +54,7 @@ export default{
 	    }, response=>{
 	      console.log("error de conexion");
 	    })
+	    */
 
 	}
 }
