@@ -29,6 +29,16 @@
           <a href="#/grafo">Redes de información</a>
         </div>
       </div> 
+
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-map-marker"></i> Mapas Regionales
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#/mapLegal">Aprobación Legal</a>
+          <a href="#/mapMedic">Aprobación medicinal</a>
+        </div>
+      </div> 
     </div>
 
     

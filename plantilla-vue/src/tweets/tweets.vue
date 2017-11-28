@@ -6,10 +6,10 @@
 	    </div> 
 			
 		<ul class="w3-ul w3-card-4">
-			<li class="w3-bar" v-for="u in dataset">
+			<li class="w3-bar" v-for="u,i in dataset">
 
 				<iframe border=0 frameborder=0 height=250 width=550 
-		 			:src="'https://twitframe.com/show?url=https://twitter.com/'+u.id_user+'/status/'+u.id_tweet+'/'">
+		 			:src="'https://twitframe.com/show?url=https://twitter.com/'+u+'/status/'+i+'/'">
 				
 		 		</iframe>
 			</li>
@@ -53,7 +53,15 @@ export default{
 		}
 	},
 	mounted: function(){
-		
+		this.$http.get('http://localhost:3000/data')
+	    .then(response=>{
+	      this.dataset = response.body;
+	      console.log("wea bacan");
+	      console.log(this.dataset);
+	      this.loadGraph(this.dataset);
+	    }, response=>{
+	      console.log("error de conexion");
+	    })
 
 	}
 }

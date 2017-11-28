@@ -1,0 +1,44 @@
+{
+	"data":[
+		{"date": "22-Oct-17","aprobacion": 31, "desaprobacion": 69},
+            {"date": "23-Oct-17","aprobacion": 72, "desaprobacion": 28},
+            {"date": "24-Oct-17","aprobacion": 38, "desaprobacion": 62},
+            {"date": "25-Oct-17","aprobacion": 47, "desaprobacion": 53},
+            {"date": "26-Oct-17","aprobacion": 36, "desaprobacion": 64},
+            {"date": "27-Oct-17","aprobacion": 27, "desaprobacion": 73},
+            {"date": "28-Oct-17","aprobacion": 68, "desaprobacion": 32},
+            {"date": "29-Oct-17","aprobacion": 47, "desaprobacion": 53},
+            {"date": "30-Oct-17","aprobacion": 37, "desaprobacion": 63},
+            {"date": "31-Oct-17","aprobacion": 72, "desaprobacion": 28},
+            {"date": "1-Nov-17","aprobacion": 51, "desaprobacion": 49},
+            {"date": "2-Nov-17","aprobacion": 78, "desaprobacion": 22},
+            {"date": "3-Nov-17","aprobacion": 78, "desaprobacion": 22},
+            {"date": "4-Nov-17","aprobacion": 68, "desaprobacion": 32},
+            {"date": "5-Nov-17","aprobacion": 76, "desaprobacion": 24},
+            {"date": "6-Nov-17","aprobacion": 34, "desaprobacion": 66},
+            {"date": "7-Nov-17","aprobacion": 40, "desaprobacion": 60},
+            {"date": "8-Nov-17","aprobacion": 45, "desaprobacion": 55},
+            {"date": "9-Nov-17","aprobacion": 78, "desaprobacion": 22},
+            {"date": "10-Nov-17","aprobacion": 28, "desaprobacion": 72},
+            {"date": "11-Nov-17","aprobacion": 17, "desaprobacion": 83},
+            {"date": "12-Nov-17","aprobacion": 56, "desaprobacion": 44},
+            {"date": "13-Nov-17","aprobacion": 92, "desaprobacion": 10},
+            {"date": "14-Nov-17","aprobacion": 90, "desaprobacion": 10},
+            {"date": "15-Nov-17","aprobacion": 71, "desaprobacion": 29},
+            {"date": "16-Nov-17","aprobacion": 21, "desaprobacion": 79},
+            {"date": "17-Nov-17","aprobacion": 14, "desaprobacion": 86},
+            {"date": "18-Nov-17","aprobacion": 63, "desaprobacion": 37},
+            {"date": "19-Nov-17","aprobacion": 40, "desaprobacion": 60},
+            {"date": "20-Nov-17","aprobacion": 58, "desaprobacion": 42},
+            {"date": "21-Nov-17","aprobacion": 74, "desaprobacion": 26},
+            {"date": "22-Nov-17","aprobacion": 78, "desaprobacion": 22},
+            {"date": "23-Nov-17","aprobacion": 39, "desaprobacion": 61},
+            {"date": "24-Nov-17","aprobacion": 22, "desaprobacion": 78},
+            {"date": "25-Nov-17","aprobacion": 50, "desaprobacion": 50},
+            {"date": "26-Nov-17","aprobacion": 66, "desaprobacion": 34},
+            {"date": "27-Nov-17","aprobacion": 55, "desaprobacion": 45}
+
+
+      ]
+
+}
