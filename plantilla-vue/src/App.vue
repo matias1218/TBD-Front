@@ -1,71 +1,34 @@
 <template>
   <div>
 
-    
-    <div class="w3-sidebar w3-light-grey w3-card-4 w3-animate-left" style="display:none" id="mySidebar">
-      <div class="w3-bar w3-dark-grey">
-        <span class="w3-bar-item w3-padding-16">Contenidos</span>
-        <button v-on:click="close" class="w3-bar-item w3-button w3-right w3-padding-16" title="Cerrar menu">×</button>
-      </div>
-      <div class="w3-bar-block">
-       
- <!--       <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleEstadistics">Estadisticas</a> -->   <a href="#/index" class="w3-bar-item w3-button" v-on:click="changeTitleHome">Inicio</a>
-          <a href="#/tweetList" class="w3-bar-item w3-button" v-on:click="changeTitleHome">Tweets mas influyentes</a>
-          <button class="w3-button w3-block w3-left-align" v-on:click="show">
-          Ver Estadisticas <i class="fa fa-caret-down"></i>
-          </button>
-          <div id="demoAcc" class="w3-hide w3-white w3-card-2">
-<!--
-            <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleBarChart">Barras</a>
-    -->     <a href="#/tweets" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Tweets por topico</a>
-            <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Aprobación-Desaprobación</a>
-            <a href="#/grafo" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Redes de información</a>
-            <!--
-            <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePiesChart">Listado en Torta</a>
-          -->
-          </div>
-          <button class="w3-button w3-block w3-left-align" v-on:click="show2">
-          Mapas regionales <i class="fa fa-caret-down"></i>
-          </button>
-          <div id="demoAccMap" class="w3-hide w3-white w3-card-2">
-<!--
-            <a href="#/barChart" class="w3-bar-item w3-button" v-on:click="changeTitleBarChart">Barras</a>
-    -->     <a href="#/mapLegal" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Legal</a>
-            <a href="#/mapMedic" class="w3-bar-item w3-button" v-on:click="changeTitlePieChart">Medicinal</a>
-           
-            <!--
-            <a href="#/estadisticas1" class="w3-bar-item w3-button" v-on:click="changeTitlePiesChart">Listado en Torta</a>
-          -->
-          </div>
-<!--
-          <div class="w3-dropdown-click">
-            <button class="w3-button" v-on:click="drop">
-              Dropdown <i class="fa fa-caret-down"></i>
-            </button>
-            <div id="demoDrop" class="w3-dropdown-content w3-bar-block w3-white w3-card-2">
-              <a href="#" class="w3-bar-item w3-button">Link</a>
-              <a href="#" class="w3-bar-item w3-button">Link</a>
-            </div>
-          </div>
-          <a href="#" class="w3-bar-item w3-button">Link 2</a>
-          <a href="#" class="w3-bar-item w3-button">Link 3</a>
--->
-      </div>
-
-    </div>
+ 
 
   
-    <div id="main">
+  <div id="main">
 
-    <div class="w3-bar w3-theme-d5 w3-border w3-xlarge w3-card-4">
+   <div class="navbar w3-card-4">
+      <a href="#/index"><i class="fa fa-home"></i> Inicio</a>
+      
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-line-chart"></i> Estadisticas 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#/tweets">Tweets por topico</a>
+          <a href="#/estadisticas1">Aprobación-desaprobación</a>
+          <a href="#/timeline">Historial de tweets por topico</a>
+        </div>
+      </div> 
 
-      <a id="openNav" class="w3-bar-item w3-button w3-white " data-toggle="tooltip" title="Menu" v-on:click="open"><i class="fa fa-th-list"></i></a>
-      <a href="#/index" class="w3-bar-item w3-button " data-toggle="tooltip" title="Inicio" v-on:click="changeTitleHome"><i class="fa fa-home"></i></a>
-      <a href="#" class="w3-bar-item w3-button" data-toggle="tooltip" title="Buscar"><i class="fa fa-search"></i></a>
-      <a href="#" class="w3-bar-item w3-button" data-toggle="tooltip" title="Contactanos"><i class="fa fa-envelope"></i></a>
-      <a href="#" class="w3-bar-item w3-button" data-toggle="tooltip" title="Siguenos en twitter"><i class="fa fa-twitter"></i></a>
-      <a href="#" class="w3-bar-item w3-button w3-right" data-toggle="tooltip" title="Sobre nosotros"><i class="fa fa-info-circle"></i></a>
-
+      <div class="dropdown">
+        <button class="dropbtn"><i class="fa fa-users"></i> Usuarios 
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-content">
+          <a href="#/tweetList">Tweets mas influyentes</a>
+          <a href="#/grafo">Redes de información</a>
+        </div>
+      </div> 
     </div>
 
     
@@ -267,7 +230,67 @@ input[type=search]:focus {
     }
         
     
+.navbar {
+    overflow: hidden;
+    background-color: #265728;
+    font-family: Arial;
+}
+
+.navbar a {
+    float: left;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.dropdown {
+    float: left;
+    overflow: hidden;
+}
+
+.dropdown .dropbtn {
+    font-size: 16px;    
+    border: none;
+    outline: none;
+    color: white;
+    padding: 14px 16px;
+    background-color: inherit;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+    background-color: #3d8b40;
+    transition: 0.3s;
     
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #bdbdbd;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    
+}
    
 
     

@@ -7,11 +7,11 @@
 <div class="w3-container" >
 
     <div class="w3-center w3-panel w3-theme-l1 w3-card-2">
-        <p>Gráfico de cantidad de tweets por topico.</p>
+        <h3>Gráfico de cantidad de tweets por topico.</h3>
       </div> 
   
   <div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
-      <p>Cantidad de tweets.</p>
+      <h3>Cantidad de tweets.</h3>
       <p>En el siguiente gráfico se muestra la distribución de la cantidad de tweets por tópico</p>
       
 

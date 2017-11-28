@@ -3,7 +3,7 @@
 
 <div class="w3-container">
 	<div class="w3-panel w3-theme-l1 w3-card-2 w3-center">
-        <p>Estadisticas de Aprobación y desaprobación de la Marihuana.</p>
+        <h3>Estadisticas de Aprobación y desaprobación de la Marihuana.</h3>
       </div>
 
       <div class="w3-center w3-cell-row" id="wea">
@@ -11,7 +11,7 @@
 	 
 	
 	<div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
-	    <p>Indices de aprobación y desaprobación.</p>
+	    <h3>Indices de aprobación y desaprobación.</h3>
 	    <p>El siguiente gráfico corresponde a la distribución de la opinión general de la población referente a los 2 tópicos estudiados: Legalización y Medicinal.</p>
 	    
 

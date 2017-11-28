@@ -2,7 +2,7 @@
 
 	<div class="w3-container w3-center">
 		<div class="w3-panel w3-theme-l1 w3-card-2">
-	      <p>Listado de tweets mas influyentes.</p>
+	      <h3>Listado de tweets mas influyentes.</h3>
 	    </div> 
 			
 		<ul class="w3-ul w3-card-4">

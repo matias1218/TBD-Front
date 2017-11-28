@@ -15,6 +15,7 @@ import tweets from './pieChart/tweets.vue';
 import mapLegal from './maps/mapaLegal.vue';
 import mapMedic from './maps/mapaMedicinal.vue';
 import tweetList from './tweets/tweets.vue';
+import lineal from './lineal.vue';
 import VueResource from 'vue-resource';
 require("./style.scss");
 
@@ -36,7 +37,8 @@ const routes = [
   { path:'/tweets', component: tweets},
   { path:'/mapLegal', component: mapLegal},
   { path:'/mapMedic', component: mapMedic},
-  { path:'/tweetList', component: tweetList}
+  { path:'/tweetList', component: tweetList},
+  { path:'/timeline', component: lineal}
 
 ]
 

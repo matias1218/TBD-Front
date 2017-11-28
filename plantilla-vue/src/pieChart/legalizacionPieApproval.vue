@@ -7,11 +7,11 @@
 <div class="w3-container" >
 
     <div class="w3-center w3-panel w3-theme-l1 w3-card-2">
-        <p>Gráfico de aprobación general.</p>
+        <h3>Gráfico de aprobación general.</h3>
       </div> 
   
   <div class="w3-container w3-gray w3-cell m4 w3-cell-middle">
-      <p>Indices de aprobación.</p>
+      <h3>Indices de aprobación.</h3>
       <p>El siguiente gráfico muestra la distribución del indice de aprobación total omitida dentro de la población chilena</p>
       
 
