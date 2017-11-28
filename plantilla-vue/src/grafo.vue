@@ -2,7 +2,7 @@
 
 	<div class="w3-container w3-center">
 		<div class="w3-panel w3-theme-l1 w3-card-2">
-	      <p>Grafo de redes sociales para cada tópico según las diversas opiniones y posturas de la población estudiada.</p>
+	      <h3>Grafo de redes sociales para cada tópico según las diversas opiniones y posturas de la población estudiada.</h3>
 	    </div> 
 		<div id="grafo">
 			<div id="chart"></div>
