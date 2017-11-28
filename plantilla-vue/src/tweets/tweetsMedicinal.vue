@@ -2,14 +2,16 @@
 
 	<div class="w3-container w3-center">
 		<div class="w3-panel w3-theme-l1 w3-card-2">
+	      
 	      <h3>Listado de tweets mas influyentes.</h3>
+		  <p>Categoría Medicinal</p>	    
 	    </div> 
 			
 		<ul class="w3-ul w3-card-4">
-			<li class="w3-bar" v-for="u,i in dataset">
+			<li class="w3-bar" v-for="u in dataset">
 
 				<iframe border=0 frameborder=0 height=250 width=550 
-		 			:src="'https://twitframe.com/show?url=https://twitter.com/'+u+'/status/'+i+'/'">
+		 			:src="'https://twitframe.com/show?url=https://twitter.com/'+u[1]+'/status/'+u[0]+'/'">
 				
 		 		</iframe>
 			</li>
@@ -31,16 +33,9 @@ export default{
 	data: function(){
 	    return {
 	    	
-	    dataset : [
-
-	    	{"id_user":"mrubiob","id_tweet":"920471747169849344"},
-	    	{"id_user":"mrubiob","id_tweet":"920471747169849344"},
-	    	{"id_user":"mrubiob","id_tweet":"920471747169849344"},
-	    	{"id_user":"mrubiob","id_tweet":"920471747169849344"},
-	    	{"id_user":"mrubiob","id_tweet":"920471747169849344"}
-	    	
-
-	    	]
+	    dataset:[
+			
+		]
 	    	
 	 
 
@@ -53,12 +48,10 @@ export default{
 		}
 	},
 	mounted: function(){
-		this.$http.get('http://localhost:3000/data')
+		this.$http.get('http://localhost:8081/tbd-tweeds-backend/list_tweets/2')
 	    .then(response=>{
 	      this.dataset = response.body;
-	      console.log("wea bacan");
-	      console.log(this.dataset);
-	      this.loadGraph(this.dataset);
+	      
 	    }, response=>{
 	      console.log("error de conexion");
 	    })

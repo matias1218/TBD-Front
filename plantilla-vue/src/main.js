@@ -14,7 +14,8 @@ import pieDis from './pieChart/legalizacionPieDisapproval.vue';
 import tweets from './pieChart/tweets.vue';
 import mapLegal from './maps/mapaLegal.vue';
 import mapMedic from './maps/mapaMedicinal.vue';
-import tweetList from './tweets/tweets.vue';
+import tweetListlegal from './tweets/tweetsLegal.vue';
+import tweetListmedic from './tweets/tweetsMedicinal.vue';
 import lineal from './lineal.vue';
 import VueResource from 'vue-resource';
 require("./style.scss");
@@ -37,7 +38,8 @@ const routes = [
   { path:'/tweets', component: tweets},
   { path:'/mapLegal', component: mapLegal},
   { path:'/mapMedic', component: mapMedic},
-  { path:'/tweetList', component: tweetList},
+  { path:'/tweetListlegal', component: tweetListlegal},
+  { path:'/tweetListmedic', component: tweetListmedic},
   { path:'/timeline', component: lineal}
 
 ]
