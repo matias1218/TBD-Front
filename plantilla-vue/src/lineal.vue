@@ -147,7 +147,11 @@
 				      		.attr("d",valueline(data))
 
 
+<<<<<<< HEAD
 				      		var div=d3.selectAll("#boxText");
+=======
+				      		var div=d3.selectAll("#tooltup");
+>>>>>>> dae08d2a3503028d3dab40e4300b0c3bc0764590
 				      		var maxim2=d3.max(data, function(d) {
 				      			return Math.max(d.desaprobacion); });
 				      		console.log("el maximo es: "+maxim2);
@@ -277,7 +281,11 @@
 				      		.attr("d",valueline(data));
 
 
+<<<<<<< HEAD
 				      		var div=d3.selectAll("#boxText");
+=======
+				      		var div=d3.selectAll("#tooltup");
+>>>>>>> dae08d2a3503028d3dab40e4300b0c3bc0764590
 				      		var maxim2=d3.max(data, function(d) {
 				      			return Math.max(d.aprobacion); });
 				      		//console.log("Maximo "+maxim2);
@@ -377,8 +385,13 @@
 				  		var minUser={userName:"Cristian Tolosa",tweet:"Los están engañando a todos con eso de la marihuana medicinal, usted sabe que produce daño al cerebro antes de los 23 años?",user:"@TololoCH"};
 
 				  var div = d3.select("#chart").append("div") 
+<<<<<<< HEAD
 				    .attr("class", "boxText")
 				    .attr("id","boxText")
+=======
+				    .attr("class", "tooltup")
+				    .attr("id","tooltup")
+>>>>>>> dae08d2a3503028d3dab40e4300b0c3bc0764590
 				    .style("opacity", 0)
 
 				  var margin = {top: 50, right: 50, bottom: 50, left: 50}
@@ -701,7 +714,11 @@
   stroke: #005500FF;
   stroke-width: 3px;
 }
+<<<<<<< HEAD
 div.boxText { 
+=======
+div.tooltup { 
+>>>>>>> dae08d2a3503028d3dab40e4300b0c3bc0764590
     position: absolute;     
     text-align: center;     
     color:white; 

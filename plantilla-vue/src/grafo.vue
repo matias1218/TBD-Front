@@ -2,7 +2,7 @@
 
 	<div class="w3-container w3-center">
 		<div class="w3-panel w3-theme-l1 w3-card-2">
-	      <h3>Grafo de redes sociales para cada tópico según las diversas opiniones y posturas de la población estudiada.</h3>
+	      <p>Grafo de redes sociales para cada tópico según las diversas opiniones y posturas de la población estudiada.</p>
 	    </div> 
 		<div id="grafo">
 			<div id="chart"></div>
@@ -42,7 +42,7 @@ export default{
 
 		 
 		  var div = d3.select("#chart").append("div") 
-				    .attr("class", "tool")       
+				    .attr("class", "tooltip")       
 				    .style("opacity", 0)
 
 
@@ -141,7 +141,7 @@ export default{
 		}
 	},
 	mounted: function(){
-		this.$http.get('http://localhost:8081/tbd-tweeds-backend/graph')
+		this.$http.get('http://localhost:3004/db')
 	    .then(response=>{
 	      this.data = response.body;
 	      this.grafo2(this.data);
@@ -183,7 +183,7 @@ export default{
   stroke-width:30;
 }
 
-div.tool { 
+div.tooltip { 
     position: absolute;     
     text-align: center;     
             
